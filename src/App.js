@@ -1,28 +1,33 @@
+// @flow
+
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Route, Redirect } from 'react-router-dom';
+import ReactRouterPropTypes from 'react-router-prop-types';
+import * as Auth from './lib/Auth';
+
+import Install from './components/Install';
+
+
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+type Props = {
+    history: ReactRouterPropTypes.history,
+    location: ReactRouterPropTypes.location
+};
+
+type State = { };
+
+class App extends Component<Props, State> {
+    render() {
+        // get current path
+        console.log(this.props);
+
+        return (
+            [
+                <Route path="/install" exact={true} component={Install} key="1" />
+            ]
+        );
+    }
 }
 
 export default App;
