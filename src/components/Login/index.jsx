@@ -28,8 +28,6 @@ class Login extends Component<Props, State> {
 
     handleSubmit = (event: Event) => {
         event.preventDefault();
-        console.log(this.state.user);
-        /*
         Auth.login(this.state.user,
             () => {
                 this.setState({ message: "" });
@@ -39,17 +37,14 @@ class Login extends Component<Props, State> {
                 this.setState({ message });
             }
         );
-        */
     };
 
     handleChange = (event: Event) => {
         let target = event.target;
         if (target instanceof HTMLInputElement) {
             const field = target.id;
-            const value = target.type === 'checkbox' ?
-                target.checked : target.value;
+            const value = target.type === 'checkbox' ? target.checked : target.value;
             // update
-            console.log(field);
             this.setState(prev_state => {
                 prev_state.user[field] = value;
                 return prev_state;
@@ -100,10 +95,11 @@ class Login extends Component<Props, State> {
                                     <b className="tooltip tooltip-top-right">Type your Password</b>
                                 </label>
                                 <label className="checkbox">
-                                    <input type="checkbox" name="remember-user" id="remember-user"
+                                    <input type="checkbox" id="remember"
                                         checked={this.state.user.remember}
                                         onChange={this.handleChange}  />
-                                        <i></i>Keep me logged in</label>
+                                        <i></i>Keep me logged in
+                                </label>
                             </section>
 
                         </fieldset>
