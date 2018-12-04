@@ -1,18 +1,11 @@
-// @flow
-import type { LoginUserObj } from  "../../lib/Models";
+import type { LoginUserObj } from  "./Models";
 
 export class Auth {
-    constructor(api) {
-        this.api = api;
-    }
 
-    register() {
-
-    }
-
-    static login(user: LoginUserObj, done, fail) {
-
+    login(user: LoginUserObj, done, fail) {
         console.log(user);
+        console.log(this);
+        window._backend.login(user);
         done();
     }
 

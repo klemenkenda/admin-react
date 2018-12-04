@@ -1,6 +1,7 @@
+// react
 import React, { Component } from 'react';
 
-import Auth from "../../lib/Auth";
+// data models
 import type { LoginUserObj } from  "../../lib/Models";
 
 type Props = {
@@ -28,7 +29,7 @@ class Login extends Component<Props, State> {
 
     handleSubmit = (event: Event) => {
         event.preventDefault();
-        Auth.login(this.state.user,
+        window._auth.login(this.state.user,
             () => {
                 this.setState({ message: "" });
                 this.props.history.push("/");
@@ -59,9 +60,9 @@ class Login extends Component<Props, State> {
                 <div className="login-box">
 
                     <form className="sky-form boxed" onSubmit={this.handleSubmit}>
-                        <header><i className="fa fa-users"></i> Sign In</header>
+                        <header><i className="fa fa-users"></i> Prijava</header>
 
-                        {/**
+                        {/*
                         <div className="alert alert-danger noborder text-center weight-400 nomargin noradius">
                             Invalid Email or Password!
                         </div>
@@ -74,38 +75,38 @@ class Login extends Component<Props, State> {
                             <strong>Too many failures!</strong> <br />
                             Please wait: <span className="inlineCountdown" data-seconds="180"></span>
                         </div>
-                        **/}
+                        */}
 
                         <fieldset>
 
                             <section>
-                                <label className="label">Username</label>
+                                <label className="label">Uporabniško ime</label>
                                 <label className="input">
                                     <i className="icon-append fa fa-user"></i>
                                     <input type="text" id="username" value={this.state.user.username} onChange={this.handleChange} />
-                                    <span className="tooltip tooltip-top-right">Type your Username</span>
+                                    <span className="tooltip tooltip-top-right">Vpiši uporabniško ime</span>
                                 </label>
                             </section>
 
                             <section>
-                                <label className="label">Password</label>
+                                <label className="label">Geslo</label>
                                 <label className="input">
                                     <i className="icon-append fa fa-lock"></i>
                                     <input type="password" id="password" value={this.state.user.password } onChange={this.handleChange} />
-                                    <b className="tooltip tooltip-top-right">Type your Password</b>
+                                    <b className="tooltip tooltip-top-right">Vpiši geslo</b>
                                 </label>
                                 <label className="checkbox">
                                     <input type="checkbox" id="remember"
                                         checked={this.state.user.remember}
                                         onChange={this.handleChange}  />
-                                        <i></i>Keep me logged in
+                                        <i></i>Permanentna prijava
                                 </label>
                             </section>
 
                         </fieldset>
 
                         <footer>
-                            <button type="submit" className="btn btn-primary pull-right">Sign In</button>
+                            <button type="submit" className="btn btn-primary pull-right">Prijava</button>
                             <div className="forgot-password pull-left">
                                 { /* <a href="page-password.html">Forgot password?</a> <br /> */ }
                             </div>

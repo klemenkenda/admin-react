@@ -1,16 +1,20 @@
-// @flow
-
+// react imports
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import ReactRouterPropTypes from 'react-router-prop-types';
+
+// lib import
+import Backend from './lib/Backend';
 import Auth from './lib/Auth';
 
+// components
 import Install from './components/Install';
 import Login from './components/Login/index';
 import './App.css';
 
-// authorization class instantiation
-let auth = new Auth();
+// backend and authorization class instantiation to global variables
+window._backend = new Backend("http://localhost:80/");
+window._auth = new Auth();
 
 type Props = {
     history: ReactRouterPropTypes.history,
@@ -25,13 +29,13 @@ class App extends Component<Props, State> {
         console.log(this.props);
 
         // auth
-        if (auth.isAuth()) {
+        if (window._auth.isAuth()) {
             return (
                 [
                     <Route path="/" exact={true} component={Install} key="1" />
                 ]
             );
-        } else if (auth.noAuthNeeded(this.props.location.pathname)) {
+        } else if (window._auth.noAuthNeeded(this.props.location.pathname)) {
             return (
                 [
                     <Route path="/login" exact={true} component={Login} key="2" />
