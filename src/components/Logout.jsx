@@ -12,8 +12,9 @@ import React, { Component } from 'react';
  */
 class Install extends Component {
     render() {
+        localStorage.removeItem("user");
         return(
-            <p>Installing</p>
+            <p>OK</p>
         )
     }
 }

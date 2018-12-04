@@ -10,12 +10,12 @@ import React, { Component } from 'react';
 /**
  * Install component.
  */
-class Install extends Component {
+class Dashboard extends Component {
     render() {
         return(
-            <p>Installing</p>
+            <p>Dashboard</p>
         )
     }
 }
 
-export default Install;
+export default Dashboard;

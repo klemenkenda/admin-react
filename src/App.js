@@ -9,7 +9,13 @@ import Auth from './lib/Auth';
 
 // components
 import Install from './components/Install';
-import Login from './components/Login/index';
+import Menu from './components/Menu';
+import Header from './components/Header';
+
+import Dashboard from './components/Dashboard';
+import Login from './components/Login';
+import Logout from './components/Logout';
+
 import './App.css';
 
 // backend and authorization class instantiation to global variables
@@ -30,9 +36,18 @@ class App extends Component<Props, State> {
         // auth
         if (window._auth.isAuth()) {
             return (
-                [
-                    <Route path="/" exact={true} component={Install} key="1" />
-                ]
+                <div>
+                    <Menu />
+                    <Header />
+                    <section id="middle">
+                        <div id="content" className="dashboard padding-20">
+                            {[
+                                <Route path="/" exact={true} component={Dashboard} key="1" />,
+                                <Route path="/logout" exact={true} component={Logout} key="2" />
+                            ]}
+                        </div>
+                    </section>
+                </div>
             );
         } else if (window._auth.noAuthNeeded(this.props.location.pathname)) {
             return (
