@@ -3,14 +3,12 @@ import type { LoginUserObj } from  "./Models";
 export class Auth {
 
     login(user: LoginUserObj, done, fail) {
-        console.log(user);
-        console.log(this);
-        window._backend.login(user);
-        done();
+        window._backend.login(user, done, fail);
     }
 
     isAuth() {
-
+        if (localStorage.getItem("user")) return true;
+        return false;
     }
 
     noAuthNeeded(path) {

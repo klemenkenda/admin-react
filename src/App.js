@@ -13,7 +13,7 @@ import Login from './components/Login/index';
 import './App.css';
 
 // backend and authorization class instantiation to global variables
-window._backend = new Backend("http://localhost:80/");
+window._backend = new Backend("http://192.168.99.100/admin/api");
 window._auth = new Auth();
 
 type Props = {
@@ -26,7 +26,6 @@ type State = { };
 class App extends Component<Props, State> {
     render() {
         // get current path
-        console.log(this.props);
 
         // auth
         if (window._auth.isAuth()) {
