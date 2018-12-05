@@ -1,5 +1,6 @@
 // react
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 // subcomponents
 
@@ -32,12 +33,12 @@ class HeaderUser extends Component {
                         </a>
                         <ul className="dropdown-menu hold-on-click">
                             <li>{/* settings */}
-                                <a href="/settings"><i className="fa fa-cogs"></i> Settings</a>
+                                <Link to="/settings"><i className="fa fa-cogs"></i> Settings</Link>
                             </li>
 
                             <li className="divider"></li>
                             <li>{/* logout */}
-                                <a href="/logout"><i className="fa fa-power-off"></i> Log Out</a>
+                                <Link to="/logout"><i className="fa fa-power-off"></i> Log Out</Link>
                             </li>
                         </ul>
                     </li>

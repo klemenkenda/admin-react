@@ -1,5 +1,6 @@
 // react
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 // subcomponents
 
@@ -14,7 +15,7 @@ class Install extends Component {
     render() {
         localStorage.removeItem("user");
         return(
-            <p>OK</p>
+            <Redirect to="/" />
         )
     }
 }

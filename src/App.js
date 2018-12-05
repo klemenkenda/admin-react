@@ -43,7 +43,8 @@ class App extends Component<Props, State> {
                         <div id="content" className="dashboard padding-20">
                             {[
                                 <Route path="/" exact={true} component={Dashboard} key="1" />,
-                                <Route path="/logout" exact={true} component={Logout} key="2" />
+                                <Route path="/logout" exact={true} component={Logout} key="3" />,
+                                <Route path="/install" exact={true} component={Install} key="4" />
                             ]}
                         </div>
                     </section>
