@@ -1,6 +1,6 @@
 // react
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 
 class Menu extends Component {
     render() {
@@ -9,15 +9,15 @@ class Menu extends Component {
             <nav id="sideNav">
                 <ul className="nav nav-list">
                     <li className="active">
-                        <a className="dashboard" href="/">
+                        <Link className="dashboard" to="/">
                             <i className="main-icon fa fa-dashboard"></i> <span>Dashboard</span>
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#">
+                        <Link to="#">
                             <i className="fa fa-menu-arrow pull-right"></i>
                             <i className="main-icon fa fa-book"></i> <span>Pages</span>
-                        </a>
+                        </Link>
                         <ul>
                             <li><a href="page-invoice.html">Invoice</a></li>
                             <li><a href="page-login.html">Login</a></li>
@@ -39,16 +39,16 @@ class Menu extends Component {
                 <h3>MORE</h3>
                 <ul className="nav nav-list">
                     <li>
-                        <a href="/install">
+                        <Link to="/install">
                             <i className="main-icon fa fa-gears"></i>
                             {/* <span className="label label-warning pull-right">0</span> */} <span>Install</span>
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="/settings">
+                        <Link to="/settings">
                             <i className="main-icon fa fa-code"></i>
                             {/*<span className="label label-danger pull-right">PRO</span>*/} <span>Settings</span>
-                        </a>
+                        </Link>
                     </li>
                 </ul>
 

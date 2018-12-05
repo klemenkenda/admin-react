@@ -7,14 +7,31 @@ import { Link } from 'react-router-dom';
 // data models
 
 // type definitions
+type Props = {}
+
+type State = {
+    user: string
+}
 
 /**
  * User menu in the header.
  */
-class HeaderUser extends Component {
-    render() {
+class HeaderUser extends Component<Props, State> {
+
+    constructor() {
+        super();
+
+        this.state = {
+            name: ""
+        }
+    }
+
+    componentDidMount() {
         let user = JSON.parse(localStorage.getItem("user"));
-        let name = user["name"];
+        this.setState({name: user["name"]});
+    }
+
+    render() {
         return(
             <nav>
 
@@ -23,17 +40,17 @@ class HeaderUser extends Component {
 
                     {/* USER OPTIONS */}
                     <li className="dropdown pull-left">
-                        <a href="#" className="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <Link to="#" className="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                             <img className="user-avatar" alt="" src="assets/images/noavatar.jpg" height="34" />
                             <span className="user-name">
                                 <span className="hidden-xs">
-                                    {name} <i className="fa fa-angle-down"></i>
+                                    {this.state.name} <i className="fa fa-angle-down"></i>
                                 </span>
                             </span>
-                        </a>
+                        </Link>
                         <ul className="dropdown-menu hold-on-click">
                             <li>{/* settings */}
-                                <Link to="/settings"><i className="fa fa-cogs"></i> Settings</Link>
+                                <Link to="/settings" className="test"><i className="fa fa-cogs"></i> Settings</Link>
                             </li>
 
                             <li className="divider"></li>
