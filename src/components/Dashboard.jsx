@@ -13,7 +13,9 @@ import React, { Component } from 'react';
 class Dashboard extends Component {
     render() {
         return(
-            <p>Dashboard</p>
+            <div id="content" className="dashboard padding-20">
+                <p>Dashboard</p>
+            </div>
         )
     }
 }

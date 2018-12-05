@@ -57,6 +57,20 @@ class Backend {
                 }
             })
     }
+
+    /**
+     * Get modules data.
+     *
+     * @param {function} done
+     * @param {function} fail
+     */
+    getModules(done: (data) => void, fail: () => void) {
+        let url = this.request("GET", "modules");
+        axios.get(url)
+            .then(res => {
+                done(res.data);
+            })
+    }
 }
 
 export default Backend;

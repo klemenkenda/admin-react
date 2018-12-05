@@ -10,7 +10,7 @@ import Auth from './lib/Auth';
 // components
 import Install from './components/Install';
 import Menu from './components/Menu';
-import Header from './components/Header';
+import HeaderTop from './components/HeaderTop';
 
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
@@ -36,17 +36,15 @@ class App extends Component<Props, State> {
         // auth
         if (window._auth.isAuth()) {
             return (
-                <div>
+                <div id="wrapper">
                     <Menu />
-                    <Header />
+                    <HeaderTop />
                     <section id="middle">
-                        <div id="content" className="dashboard padding-20">
-                            {[
-                                <Route path="/" exact={true} component={Dashboard} key="1" />,
-                                <Route path="/logout" exact={true} component={Logout} key="3" />,
-                                <Route path="/install" exact={true} component={Install} key="4" />
-                            ]}
-                        </div>
+                        {[
+                            <Route path="/" exact={true} component={Dashboard} key="1" />,
+                            <Route path="/logout" exact={true} component={Logout} key="3" />,
+                            <Route path="/install" exact={true} component={Install} key="4" />
+                        ]}
                     </section>
                 </div>
             );
