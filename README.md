@@ -1,22 +1,25 @@
 # Roadmap
 
-## Input fields
+## Input fields - stage 1
 
 * text field
 * rich-text field
-* real rich-text field
 * file upload
-* media library
 * date field
-* time field
-* password
-* date-span
 * checkbox
 * select
   * static
   * SQL based
 
-# Input fields - step 2
+## Input fields - stage 2
+
+* media library
+* real rich-text field
+* password
+* date-span
+* time field
+
+## Input fields - stage 3
 
 * radio
 * stepper
