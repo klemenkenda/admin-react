@@ -1,3 +1,46 @@
+# Roadmap
+
+## Input fields
+
+* text field
+* rich-text field
+* real rich-text field
+* file upload
+* media library
+* date field
+* time field
+* password
+* date-span
+* checkbox
+* select
+  * static
+  * SQL based
+
+# Input fields - step 2
+
+* radio
+* stepper
+* masked phone number
+* email
+* color picker
+* select - slider
+* numeric slider
+* markdown editor
+* auto suggest
+
+* comment for field
+* check field consistency
+
+
+## Page constructor
+
+* subpage config
+* subpage admin render + subpage render
+
+
+
+# Development guidelines
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
