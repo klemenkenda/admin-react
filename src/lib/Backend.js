@@ -3,11 +3,6 @@
 // axios ajax
 import axios from 'axios';
 
-// import models
-import type {
-    LoginUserObj
-} from  "./Models";
-
 /**
  * Backend object to communicate with REST API.
  */
@@ -24,7 +19,7 @@ class Backend {
      * @param {string} functionStr
      * @param {json} parameters
      */
-    request(type: string, functionStr: string, parameters: any) {
+    request(type, functionStr, parameters) {
         let url = this.endpoint + "/" + functionStr;
         let paramStr = "";
         for (let param in parameters) {
@@ -40,7 +35,7 @@ class Backend {
      *
      * @param {LoginUserObj} user Username, password and permanent login info.
      */
-    login(user: LoginUserObj, done: () => void, fail: () => void) {
+    login(user, done, fail) {
         let url = this.request("GET", "login", { user: user.username, password: user.password });
         axios.get(url)
             .then((res) => {
@@ -64,7 +59,7 @@ class Backend {
      * @param {function} done
      * @param {function} fail
      */
-    getModules(done: (data) => void, fail: () => void) {
+    getModules(done, fail) {
         let url = this.request("GET", "modules");
         axios.get(url)
             .then(res => {

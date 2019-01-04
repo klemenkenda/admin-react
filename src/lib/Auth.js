@@ -1,8 +1,6 @@
-import type { LoginUserObj } from  "./Models";
-
 export class Auth {
 
-    login(user: LoginUserObj, done, fail) {
+    login(user, done, fail) {
         window._backend.login(user, done, fail);
     }
 

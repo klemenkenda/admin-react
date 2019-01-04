@@ -3,23 +3,18 @@ import React, { Component } from 'react';
 
 // subcomponents
 import Title from './Title';
+import Module from './Module';
 
 // data models
-
-// type definitions
-type Props = {};
-type State = {
-    data: any
-}
 
 /**
  * Install component.
  */
-class Install extends Component<Props, State> {
+class Install extends Component {
     constructor(props, state) {
         super(props);
         this.state = {
-            data: {}
+            data: []
         }
     }
 
@@ -29,11 +24,17 @@ class Install extends Component<Props, State> {
         });
     }
 
+    handleChange() {
+        //
+    }
+
     render() {
         let links = [
             { name: "Dashboard", url: "/" },
             { name: "Installation" }
         ];
+
+        console.log(this.state.data);
 
         return(
             <div>
@@ -41,7 +42,11 @@ class Install extends Component<Props, State> {
 
                 {/* -- /page title -- */}
                 <div id="content" className="padding-20">
-                    <p>Installing</p>
+
+                    { this.state.data.map((el, i) => {
+                        return <Module key={i} data={el} />
+                    })}
+
                 </div>
             </div>
         )

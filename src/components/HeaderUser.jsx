@@ -6,17 +6,10 @@ import { Link } from 'react-router-dom';
 
 // data models
 
-// type definitions
-type Props = {}
-
-type State = {
-    user: string
-}
-
 /**
  * User menu in the header.
  */
-class HeaderUser extends Component<Props, State> {
+class HeaderUser extends Component {
 
     constructor() {
         super();
@@ -28,7 +21,9 @@ class HeaderUser extends Component<Props, State> {
 
     componentDidMount() {
         let user = JSON.parse(localStorage.getItem("user"));
-        this.setState({name: user["name"]});
+        if (user != null) {
+            this.setState({name: user["name"]});
+        }
     }
 
     render() {

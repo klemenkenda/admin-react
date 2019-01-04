@@ -1,7 +1,6 @@
 // react imports
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import ReactRouterPropTypes from 'react-router-prop-types';
 
 // lib import
 import Backend from './lib/Backend';
@@ -22,14 +21,7 @@ import './App.css';
 window._backend = new Backend("http://192.168.99.100/admin/api");
 window._auth = new Auth();
 
-type Props = {
-    history: ReactRouterPropTypes.history,
-    location: ReactRouterPropTypes.location
-};
-
-type State = { };
-
-class App extends Component<Props, State> {
+class App extends Component {
     render() {
         // get current path
 

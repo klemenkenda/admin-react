@@ -1,19 +1,7 @@
 // react
 import React, { Component } from 'react';
 
-// data models
-import type { LoginUserObj } from  "../../lib/Models";
-
-type Props = {
-    history: Array<mixed>
-};
-
-type State = {
-    user: LoginUserObj,
-    message: string
-};
-
-class Login extends Component<Props, State> {
+class Login extends Component {
     constructor() {
         super();
 
@@ -27,7 +15,7 @@ class Login extends Component<Props, State> {
         }
     };
 
-    handleSubmit = (event: Event) => {
+    handleSubmit = (event) => {
         event.preventDefault();
         window._auth.login(this.state.user,
             () => {
@@ -40,7 +28,7 @@ class Login extends Component<Props, State> {
         );
     };
 
-    handleChange = (event: Event) => {
+    handleChange = (event) => {
         let target = event.target;
         if (target instanceof HTMLInputElement) {
             const field = target.id;
