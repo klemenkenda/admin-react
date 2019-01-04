@@ -30,7 +30,6 @@
 * numeric slider
 * markdown editor
 * auto suggest
-
 * comment for field
 * check field consistency
 
