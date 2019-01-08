@@ -21,7 +21,7 @@ class HeaderTop extends Component {
 
                 {/* Logo */}
                 <span className="logo pull-left">
-                    <img src="assets/images/logo_light.png" alt="admin panel" height="35" style={{marginTop: "8px"}} />
+                    <img src="/assets/images/logo_light.png" alt="admin panel" height="35" style={{marginTop: "8px"}} />
                 </span>
                 {/*
                 <form method="get" action="page-search.html" className="search pull-left hidden-xs">

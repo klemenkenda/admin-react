@@ -18,12 +18,6 @@ class Install extends Component {
         }
     }
 
-    componentDidMount() {
-        window._backend.getModules(data => {
-            this.setState({ data: data });
-        });
-    }
-
     handleChange() {
         //
     }
@@ -34,8 +28,8 @@ class Install extends Component {
             { name: "Installation" }
         ];
 
-        console.log(this.state.data);
-
+        // console.log(this.state.data);
+        console.log("Props", this.props.config);
         return(
             <div>
                 <Title name="Install Modules" links={JSON.stringify(links)} />
@@ -43,7 +37,7 @@ class Install extends Component {
                 {/* -- /page title -- */}
                 <div id="content" className="padding-20">
 
-                    { this.state.data.map((el, i) => {
+                    {this.props.config.map((el, i) => {
                         return <Module key={i} data={el} />
                     })}
 

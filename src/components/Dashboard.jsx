@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 
 // subcomponents
+import Title from './Title';
 
 // data models
 
@@ -12,11 +13,15 @@ import React, { Component } from 'react';
  */
 class Dashboard extends Component {
     render() {
+        let links = [
+            { name: "Dashboard" }
+        ];
+
         return(
-            <div id="content" className="dashboard padding-20">
-                <p>Dashboard</p>
+            <div>
+                <Title name="Dashboard" links={JSON.stringify(links)} />
             </div>
-        )
+        );
     }
 }
 
