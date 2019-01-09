@@ -1,9 +1,18 @@
 # Roadmap
 
-## Input fields - stage 1
+## Implemented
 
 * text field
-* rich-text field
+* textarea
+* rich-text
+
+## Important functionalities (ASAP!)
+
+* saving
+* viewing of data in tables
+
+## Input fields - stage 1
+
 * file upload
 * date field
 * checkbox
@@ -13,7 +22,9 @@
 
 ## Input fields - stage 2
 
+* photo upload
 * media library
+* photogallery
 * real rich-text field
 * password
 * date-span
@@ -32,6 +43,7 @@
 * auto suggest
 * comment for field
 * check field consistency
+* user field (user specific filtering)
 
 
 ## Page constructor
