@@ -12,6 +12,13 @@ import Title from './Title';
  * Install component.
  */
 class Dashboard extends Component {
+    componentDidMount() {
+        window._backend.getTest((data) => {
+            console.log(data);
+        });
+
+    }
+
     render() {
         let links = [
             { name: "Dashboard" }

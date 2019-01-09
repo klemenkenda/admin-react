@@ -66,6 +66,14 @@ class Backend {
                 done(res.data);
             })
     }
+
+    getTest(done, fail) {
+        let url = "/api/index.html";
+        axios.get(url)
+            .then(res => {
+                done(res.data);
+            })
+    }
 }
 
 export default Backend;
