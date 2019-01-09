@@ -34,7 +34,7 @@
 		*/	jQuery.browserDetect();
 
 		/*
-			fullscreen switcher 
+			fullscreen switcher
 		*/	_goFullScreen();
 
 		/*
@@ -80,7 +80,7 @@
 		/** ajax page **/
 		_ajaxPage(ajax);
 
-		/** Bootstrap Tooltip **/ 
+		/** Bootstrap Tooltip **/
 		jQuery("[data-toggle=tooltip]").tooltip();
 
         /** Hold dropdown on click  **/
@@ -96,7 +96,7 @@
  **************************************************************** **/
 	function _afterResize(ajax) {
 
-		/* 
+		/*
 			IMPORTAT!
 			We need .load() otherwise will cause conflicts
 			Conflict example: flot.resize.js
@@ -126,7 +126,7 @@
 						jQuery("#mobileMenuBtn").removeClass('active');
 						jQuery('body').removeClass('menu-open');
 					}
-					
+
 					// Aside
 					_asideFix();
 
@@ -212,9 +212,9 @@
 
 		if(ajax === true) {
 			jQuery("a").bind("click", function(e) {
-				if(!jQuery(this).hasClass('external') && 
-					jQuery(this).attr('href') != '#' && 
-					jQuery(this).attr('href') != 'javascript:;' && 
+				if(!jQuery(this).hasClass('external') &&
+					jQuery(this).attr('href') != '#' &&
+					jQuery(this).attr('href') != 'javascript:;' &&
 					jQuery(this).attr('href') != 'javascript:void(0);' &&
 					jQuery(this).attr('href') != 'javascript:void(0)'
 				) {
@@ -314,7 +314,7 @@
 
 					jQuery(container).animate({'opacity':'1.0'}, 300);
 
-					
+
 				});
 
 			},
@@ -360,7 +360,7 @@
 				railColor: 			jQuery(this).attr("data-railColor")  					|| '#eaeaea',
 				height: 			height
 			});
-		
+
 
 			// Disable body scroll on slimscroll hover
 			if(jQuery(this).attr('disable-body-scroll') == 'true') {
@@ -480,7 +480,7 @@
 
 			var config = jQuery.extend({}, defaults, options, slider.data("plugin-options"));
 			slider.owlCarousel(config).addClass("owl-carousel-init");
-			
+
 
 			// Progress Bar
 			var elem = jQuery(this);
@@ -493,7 +493,7 @@
 			  //start counting
 			  start();
 			}
-		 
+
 			//create div#progressBar and div#bar then prepend to $("#owl-demo")
 			function buildProgressBar(){
 			  $progressBar = $("<div>",{
@@ -513,7 +513,7 @@
 			  tick = setInterval(interval, 10);
 			};
 
-	 
+
 			var time = 7; // time in seconds
 			function interval() {
 			  if(isPause === false){
@@ -523,17 +523,17 @@
 				 });
 				//if percentTime is equal or greater than 100
 				if(percentTime >= 100){
-				  //slide to next item 
+				  //slide to next item
 				  $elem.trigger('owl.next')
 				}
 			  }
 			}
-		 
-			//pause while dragging 
+
+			//pause while dragging
 			function pauseOnDragging(){
 			  isPause = true;
 			}
-		 
+
 			//moved callback
 			function moved(){
 			  //clear interval
@@ -545,8 +545,8 @@
 		});
 	}
 
-	
-	
+
+
 /** Popover
  **************************************************************** **/
 	function _popover() {
@@ -568,7 +568,7 @@
 				}).click(function(e) {
 
 					jQuery(this).popover('show');
-					
+
 					clickedAway = false;
 					isVisible = true;
 					e.preventDefault();
@@ -637,12 +637,12 @@
 						tCounter: 	'%curr% / %total%'
 					},
 
-					image: 	{ 
-						tError: 	'Image not loaded!' 
+					image: 	{
+						tError: 	'Image not loaded!'
 					},
 
-					ajax: 	{ 
-						tError: 	'Content not loaded!' 
+					ajax: 	{
+						tError: 	'Content not loaded!'
 					}
 				});
 
@@ -751,7 +751,7 @@
 /** Charts
  **************************************************************** **/
 	function _charts(ajax) {
-		
+
 
 		/** Sparkline Graph
 
@@ -781,11 +781,11 @@
 						jQuery('.sparkline').each(function() {
 							jQuery(this).sparkline('html', jQuery(this).data("plugin-options"));
 						});
-					
+
 					}
 
 				}
-			
+
 			});
 
 		}
@@ -830,11 +830,11 @@
 						});
 
 					});
-				
+
 				}
-			
+
 			});
-		
+
 		}
 
 
@@ -874,14 +874,14 @@
 			loadScript(plugin_path + 'typeahead.bundle.js', function() {
 
 				if(jQuery().typeahead) {
-					
+
 					_container.each(function() {
 						var	_t 					= jQuery(this),
 							_minLength			= _t.attr('data-minLength') || 1,
 							_qryURL 			= _t.attr('data-queryURL'),
 							_limit	 			= _t.attr('data-limit') 	|| 10,
 							_autoload 			= _t.attr('data-autoload');
-							
+
 							if(_autoload == "false") {
 								return false;
 							}
@@ -910,14 +910,14 @@
 								source: _typeahead
 							});
 							/** **/
-  
+
 					});
 
-					
+
 				}
-				
+
 			});
-			
+
 		}
 
 	}
@@ -930,7 +930,7 @@
 	function _form() {
 
 
-		/** Form Validate 
+		/** Form Validate
 			LOAD PLUGIN ONLY!
 		 ************************ **/
 		if(jQuery('form.validate-plugin').length > 0) {
@@ -974,7 +974,7 @@
 
 										target: 	jQuery(form).find('.validate-result').length > 0 ? jQuery(form).find('.validate-result') : '',
 
-										error: 		function(data) { 
+										error: 		function(data) {
 											_toastr("Sent Failed!",_Tposition,"error",false);
 										},
 
@@ -1002,7 +1002,7 @@
 
 												// Toastr Message
 												_toastr(_Smessage,_Tposition,_Ttype,_Turl);
-											
+
 											}
 										}
 									});
@@ -1028,9 +1028,9 @@
 		if(_container.length > 0) {
 
 			loadScript(plugin_path + 'form.masked/jquery.maskedinput.js', function() {
-				
+
 				_container.each(function() {
-				
+
 					var _t 				= jQuery(this);
 						_format 		= _t.attr('data-format') 		|| '(999) 999-999999',
 						_placeholder 	= _t.attr('data-placeholder') 	|| 'X';
@@ -1039,7 +1039,7 @@
 					_t.mask(_format, {placeholder:_placeholder});
 
 				});
-				
+
 			});
 
 		}
@@ -1054,11 +1054,11 @@
  **************************************************************** **/
 	function _select2() {
 		var _container = jQuery('select.select2');
-		
+
 		if(_container.length > 0) {
-			
+
 			loadScript(plugin_path + 'select2/js/select2.full.min.js', function() {
-		
+
 				if(jQuery().select2) {
 					jQuery('select.select2').select2();
 				}
@@ -1125,10 +1125,10 @@
 			<input type="text" class="form-control datepicker" data-format="yyyy-mm-dd" data-lang="en" data-RTL="false">
 		 ******************* **/
 		var _container_1 = jQuery('.datepicker');
-		
+
 		if(_container_1.length > 0) {
 			loadScript(plugin_path + 'bootstrap.datepicker/js/bootstrap-datepicker.min.js', function() {
-		
+
 				if(jQuery().datepicker) {
 
 					_container_1.each(function() {
@@ -1140,7 +1140,7 @@
 						}
 
 						jQuery(this).datepicker({
-							format:			_t.attr('data-format') 			|| 'yyyy-mm-dd', 
+							format:			_t.attr('data-format') 			|| 'yyyy-mm-dd',
 							language: 		_lang,
 							rtl: 			_t.attr('data-RTL') 			== "true"  ? true  : false,
 							changeMonth: 	_t.attr('data-changeMonth') 	== "false" ? false : true,
@@ -1156,9 +1156,9 @@
 
 							// AJAX POST - OPTIONAL
 
-						}).data('datepicker'); 
+						}).data('datepicker');
 					});
-					
+
 				}
 
 			});
@@ -1171,15 +1171,15 @@
 			<input type="text" class="form-control rangepicker" value="2015-01-01 - 2016-12-31" data-format="yyyy-mm-dd" data-from="2015-01-01" data-to="2016-12-31">
 		 ******************* **/
 		var _container_2 = jQuery('.rangepicker');
-		
+
 		if(_container_2.length > 0) {
 			loadScript(plugin_path + 'bootstrap.daterangepicker/moment.min.js', function() {
 				loadScript(plugin_path + 'bootstrap.daterangepicker/daterangepicker.js', function() {
-			
+
 					if(jQuery().datepicker) {
 
 						_container_2.each(function() {
-						
+
 							var _t 		= jQuery(this),
 								_format = _t.attr('data-format').toUpperCase() || 'YYYY-MM-DD';
 
@@ -1197,13 +1197,13 @@
 								   'This Month': [moment().startOf('month'), moment().endOf('month')],
 								   'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
 								}
-							}, 
+							},
 							function(start, end, label) {
 								// alert("A new date range was chosen: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
 							});
 
 						});
-						
+
 					}
 
 				});
@@ -1216,14 +1216,14 @@
 			<input type="text" class="form-control timepicker" value="11 : 55 : PM">
 		 ******************* **/
 		var _container_3 = jQuery('.timepicker');
-		
+
 		if(_container_3.length > 0) {
 			loadScript(plugin_path + 'timepicki/timepicki.min.js', function() {
-			
+
 				if(jQuery().timepicki) {
 
 					_container_3.timepicki();
-					
+
 				}
 
 			});
@@ -1234,10 +1234,10 @@
 		/** Color Picker
 		 ******************* **/
 		var _container_4 = jQuery('.colorpicker');
-		
+
 		if(_container_4.length > 0) {
 			loadScript(plugin_path + 'spectrum/spectrum.min.js', function() {
-			
+
 				if(jQuery().spectrum) {
 
 					_container_4.each(function() {
@@ -1260,7 +1260,7 @@
 										["#900","#b45f06","#bf9000","#38761d","#134f5c","#0b5394","#351c75","#741b47"],
 										["#600","#783f04","#7f6000","#274e13","#0c343d","#073763","#20124d","#4c1130"]
 									];
-	
+
 							} else {
 								_palette = null;
 							}
@@ -1270,7 +1270,7 @@
 							} else {
 								_color = "#ff0000";
 							}
-							
+
 							if(!_t.attr('data-defaultColor') && _allowEmpty == "true") {
 								_color = null;
 							}
@@ -1296,7 +1296,7 @@
 						});
 
 					});
-					
+
 				}
 
 			});
@@ -1315,11 +1315,11 @@
 			<textarea class="summernote form-control" data-height="200"></textarea>
 		 ***************************** **/
 		var _container_1 = jQuery('textarea.summernote');
-		
+
 		if(_container_1.length > 0) {
-			
+
 			loadScript(plugin_path + 'editor.summernote/summernote.min.js', function() {
-		
+
 				if(jQuery().summernote) {
 
 					_container_1.each(function() {
@@ -1360,11 +1360,11 @@
 			<textarea class="markdown" data-height="300" name="content" data-provide="markdown" data-lang="en" rows="10"></textarea>
 		 ***************************** **/
 		var _container_2 = jQuery('textarea.markdown');
-		
+
 		if(_container_2.length > 0) {
-			
+
 			loadScript(plugin_path + 'editor.markdown/js/bootstrap-markdown.min.js', function() {
-		
+
 				if(jQuery().markdown) {
 
 					_container_2.each(function() {
@@ -1386,9 +1386,9 @@
 					});
 
 				}
-				
+
 			});
-			
+
 		}
 
 	}
@@ -1400,7 +1400,7 @@
 	Various Functions
  **************************************************************** **/
 	function _misc() {
-	
+
 
 		/** Masonry
 		 *********************** **/
@@ -1452,7 +1452,7 @@
 
 				jQuery(_href).slideToggle(200);
 				jQuery('i.fa', this).removeClass('fa-minus-square').addClass('fa-plus-square');
-			
+
 			}
 
 		});
@@ -1497,7 +1497,7 @@
 			}
 		});
 
-	
+
 	}
 
 
@@ -1570,13 +1570,14 @@
 	}
 
 
-	
+
 
 /** Aside
  **************************************************************** **/
 	function _aside() {
 
-		// Mobile Button
+        // Mobile Button
+        jQuery("#mobileMenuBtn").unbind();
 		jQuery("#mobileMenuBtn").bind("click", function(e) {
 			e.preventDefault();
 
@@ -1641,7 +1642,8 @@
 		});
 
 
-		// Multilevel Navigation
+        // Multilevel Navigation
+        jQuery("#aside ul.nav li a").unbind();
 		jQuery('#aside ul.nav li a').bind("click", function(e) {
 
 			var _t 		= jQuery(this),
@@ -1776,7 +1778,7 @@
 		// Panel Close
 		jQuery('#middle div.panel ul.options>li>a.panel_close').bind("click", function(e) {
 			e.preventDefault();
-			
+
 			var panel 	= jQuery(this).closest('div.panel'),
 			panel_id	= panel.attr('id');
 
@@ -1784,8 +1786,8 @@
 				jQuery(this).remove();
 
 				// FUNCTION ON custom.js
-				if (typeof _closePanel == 'function') { 
-					_closePanel(panel_id); 
+				if (typeof _closePanel == 'function') {
+					_closePanel(panel_id);
 				}
 			});
 		});
@@ -1802,7 +1804,7 @@
 			var panel 			= jQuery(this).closest('div.panel'),
 				panel_close 	= jQuery('a.panel_close', panel).closest('li');
 				panel_colapse 	= jQuery('a.panel_colapse', panel).closest('li');
-			
+
 			panel.toggleClass('fullscreen').toggleClass('');
 			panel_close.toggleClass('hide').toggleClass('');
 			panel_colapse.toggleClass('hide').toggleClass('');
@@ -1849,7 +1851,7 @@
 /** Modal Autoload
 
 	USAGE:
-	
+
 	<div id="MODAL-ID-REQUIRED" class="modal fade" data-autoload="true" data-autoload-delay="2000">
 		...
 	</div>
@@ -1893,7 +1895,7 @@
 				// LOCAL STORAGE - DO NOT HIDE ON NEXT PAGE LOAD!
 				jQuery("input.loadModalHide", this).bind("click", function() {
 					var _tt = jQuery(this);
-					
+
 					if(_tt.is(":checked")) {
 						localStorage.setItem(_id, 'hidden');
 						console.log('[Modal Autoload #'+_id+'] Added to localStorage');
@@ -1929,10 +1931,10 @@
 		bottom-left
 		bottom-center
 		bottom-full-width
-		
+
 	USAGE:
 		_toastr("My Message here","top-right","error",false);
-		
+
 	NOTE:
 		_onclick = url to redirect (example: http://www.stepofweb.com)
  **************************************************************** **/
@@ -2024,7 +2026,7 @@
 					}, 1500); // delay 1.5s
 				}
 			});
-		
+
 		}
 
 	}
@@ -2040,11 +2042,11 @@
 /** ***************************************** DO NOT EDIT BELOW HERE *********************************************** **/
 /** ***************************************** DO NOT EDIT BELOW HERE *********************************************** **/
 /** ***************************************** DO NOT EDIT BELOW HERE *********************************************** **/
-/** ***************************************** DO NOT EDIT BELOW HERE *********************************************** **/	
+/** ***************************************** DO NOT EDIT BELOW HERE *********************************************** **/
 
 
 
-	// scroll 
+	// scroll
 	function wheel(e) {
 	  e.preventDefault();
 	}
@@ -2060,7 +2062,7 @@
 		if (window.removeEventListener) {
 			window.removeEventListener('DOMMouseScroll', wheel, false);
 		}
-		window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
+		window.onmousewheel = document.onmousewheel = document.onkeydown = null;
 	}
 
 	// overlay

@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Menu extends Component {
+
+    componentDidUpdate() {
+        window._aside();
+    }
+
     render() {
 
         // transverse through config
