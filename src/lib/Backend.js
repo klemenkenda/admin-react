@@ -20,6 +20,7 @@ class Backend {
      * @param {json} parameters
      */
     request(type, functionStr, parameters) {
+        console.log(this.endpoint);
         let url = this.endpoint + "/" + functionStr;
         let paramStr = "";
         for (let param in parameters) {
@@ -63,10 +64,17 @@ class Backend {
         let url = this.request("GET", "modules");
         axios.get(url)
             .then(res => {
+                console.log(res.data);
                 done(res.data);
             })
     }
 
+    /**
+     * Test call to proxied API server, which is available in the /api/* URL.
+     *
+     * @param {function} done
+     * @param {function} fail
+     */
     getTest(done, fail) {
         let url = "/api/index.html";
         axios.get(url)

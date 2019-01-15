@@ -14,7 +14,7 @@ import App from './components/App';
 import './App.css';
 
 // backend and authorization class instantiation to global variables
-window._backend = new Backend("http://192.168.99.100/admin/api");
+window._backend = new Backend("/api");
 window._auth = new Auth();
 
 class AppJS extends Component {

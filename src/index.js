@@ -7,7 +7,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-    <Router>
+    <Router basename={'/admin'}>
         <Route path='/' component={App} key="0" />
     </Router>,
     document.getElementById('root')

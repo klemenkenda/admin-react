@@ -17,7 +17,7 @@ import Backend from '../lib/Backend';
 // type definitions
 
 // backend and authorization class instantiation to global variables
-window._backend = new Backend("http://192.168.99.100/admin/api");
+window._backend = new Backend("http://192.168.99.100/api");
 
 /**
  * Main app container.
