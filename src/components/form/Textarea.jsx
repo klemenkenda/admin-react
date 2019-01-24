@@ -12,6 +12,15 @@ import React, { Component } from 'react';
  * Install component.
  */
 class Textarea extends Component {
+    constructor(props) {
+        super(props);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event) {
+        console.log(event);
+        this.props.handleElementChange(this.props.name, event.target.value);
+    }
 
     render() {
         console.log(this.props);
@@ -33,7 +42,7 @@ class Textarea extends Component {
                 <div className="form-group">
                     <div className="col-md-12 col-sm-12">
                         <label>{description}</label>
-                        <textarea name="content" rows="10" className={textareaClass} data-height="300" data-lang="en-US"></textarea>
+                        <textarea name="content" rows="10" className={textareaClass} data-height="300" data-lang="en-US" onBlur={this.handleChange}></textarea>
                     </div>
                 </div>
             </div>

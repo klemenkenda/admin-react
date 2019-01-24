@@ -1327,14 +1327,15 @@
 						var _lang = jQuery(this).attr('data-lang') || 'en-US';
 
 						if(_lang != 'en-US') { // Language!
-						alert(_lang);
+						    console.log(_lang);
 							loadScript(plugin_path + 'editor.summernote/lang/summernote-'+_lang+'.js');
 						}
 
 						jQuery(this).summernote({
 							height: jQuery(this).attr('data-height') || 200,
-							lang: 	jQuery(this).attr('data-lang') || 'en-US', // default: 'en-US'
-							toolbar: [
+                            lang: 	jQuery(this).attr('data-lang') || 'en-US', // default: 'en-US'
+                            onChange: function() { console.log(jQuery(this)) },
+                            toolbar: [
 							/*	[groupname, 	[button list]]	*/
 								['style', 		['style']],
 								['fontsize', 	['fontsize']],
@@ -1345,7 +1346,8 @@
 								['media', 		['link', 'picture', 'video']],
 								['misc', 		['codeview', 'fullscreen', 'help']]
 							]
-						});
+                        });
+
 					});
 
 				}

@@ -17,6 +17,31 @@ import Utils from '../lib/Utils';
  */
 class Add extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleElementChange = this.handleElementChange.bind(this);
+    }
+
+    handleSubmit(event) {
+        console.log(event);
+        console.log(this);
+        event.preventDefault();
+    }
+
+    /**
+     * Data from subsequent form fields gets stored in this state here.
+     *
+     * @param {string} key Key (field) name.
+     * @param {string} val Value.
+     */
+    handleElementChange(key, val) {
+        this.setState({
+            [key]: val
+        });
+    }
+
     render() {
         let module = Utils.moduleId(this.props);
         let title = Utils.moduleTitle(this.props.config, module);
@@ -39,11 +64,11 @@ class Add extends Component {
         return(
             <div>
                 <Title name={title_name} links={JSON.stringify(links)} />
-                <form className="validate" action="php/contact.php" method="post" encType="multipart/form-data" data-success="Sent! Thank you!" data-toastr-position="top-right">
+                <form className="validate" onSubmit={this.handleSubmit}>
                     <div id="content" className="padding-20">
                         <div className="row">
                             <div className="col-md-9 col-sm-12">
-                                <Fields fields={fields} />
+                                <Fields fields={fields} handleElementChange={this.handleElementChange} />
                             </div>
                             <div className="col-md-3 col-sm-12">
                                 <div className="panel panel-default">
