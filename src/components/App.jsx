@@ -7,6 +7,7 @@ import Install from './Install';
 import Menu from './Menu';
 import HeaderTop from './HeaderTop';
 import Add from './Add';
+import List from './List';
 
 import Dashboard from './Dashboard';
 import Logout from './Logout';
@@ -55,7 +56,7 @@ class App extends Component {
                         <Route path="/install" exact={true} render={(props) => <Install {...props} config={this.state.config} /> } key="4" />,
 
                         <Route path="/add/:id" exact={true} render={(props) => <Add {...props} config={this.state.config} />} key="5" />,
-                        <Route path="/list/:id" exact={true} component={Add} key="6" />
+                        <Route path="/list/:id" exact={true} render={(props) => <List {...props} config={this.state.config} />} key="6" />
                     ]}
                 </section>
             </div>
