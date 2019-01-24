@@ -33,15 +33,21 @@ class App extends Component {
         }
     }
 
-    /**
-     * Load configuration.
-     */
-    componentDidMount() {
+
+    loadData() {
         window._backend.getModules((data) => {
             this.setState({
                 config: data
             })
         })
+    };
+
+
+    /**
+     * Load configuration.
+     */
+    componentDidMount() {
+        this.loadData();
     }
 
     render() {

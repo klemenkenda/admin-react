@@ -70,6 +70,21 @@ class Backend {
     }
 
     /**
+     * Get table items data.
+     *
+     * @param {function} done
+     * @param {function} fail
+     */
+    getTableData(table, done, fail) {
+        let url = this.request("GET", "data?table=" + table);
+        axios.get(url)
+            .then(res => {
+                console.log(res.data);
+                done(res.data);
+            })
+    }
+
+    /**
      * Test call to proxied API server, which is available in the /api/* URL.
      *
      * @param {function} done

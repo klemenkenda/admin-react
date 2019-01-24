@@ -13,7 +13,7 @@ import Fields from './Fields';
 import Utils from '../lib/Utils';
 
 /**
- * Install component.
+ * Add component.
  */
 class Add extends Component {
 
